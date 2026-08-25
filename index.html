@@ -7,7 +7,7 @@
 <meta name="description" content="Třídní pokladna: mobilní aplikace pro učitele na evidenci žáků, výletů, záloh a plateb. Bez tabulek, bez papírování.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;po600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy: #17324F;
@@ -101,7 +101,7 @@
   }
   .hero-pattern{
     position:absolute; inset:0; opacity:0.35; pointer-events:none;
-    background-image:url('assets/banner.jpg');
+    background-image:url('assets/banner.png');
     background-size:1600px auto;
     background-position:center -60px;
     background-repeat:no-repeat;
@@ -332,7 +332,47 @@
     background-position:0 -7px;
   }
 
-  /* ---------- HOW IT WORKS ---------- */
+  /* ---------- VIDEO TUTORIALS ---------- */
+  .videos{background:var(--cream);}
+  .video-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
+  }
+  @media (max-width:860px){ .video-grid{grid-template-columns:1fr;} }
+  .video-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .video-frame{
+    position:relative;
+    aspect-ratio:16/9;
+    background:linear-gradient(135deg, var(--navy), var(--teal-deep));
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .video-frame video{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .video-placeholder{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px; color:rgba(255,255,255,0.9); text-align:center; padding:20px;
+  }
+  .video-placeholder .play-icon{
+    width:52px; height:52px; border-radius:50%;
+    background:rgba(255,255,255,0.16);
+    border:1.5px solid rgba(255,255,255,0.4);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .video-placeholder .play-icon svg{width:20px; height:20px; margin-left:2px;}
+  .video-placeholder span{
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.04em;
+    text-transform:uppercase; color:rgba(255,255,255,0.75);
+  }
+  .video-info{padding:18px 20px 22px;}
+  .video-info h3{font-size:16.5px; color:var(--navy); margin-bottom:6px;}
+  .video-info p{font-size:13.5px; line-height:1.5; color:var(--navy-soft); margin:0;}
   .how{background:var(--paper);}
   .steps{
     display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
@@ -418,6 +458,7 @@
     <div class="nav-links">
       <a href="#funkce">Funkce</a>
       <a href="#jak-to-funguje">Jak to funguje</a>
+      <a href="#videonavody">Videonávody</a>
       <a href="#pro-koho">Pro koho je appka</a>
     </div>
     <a class="nav-cta" href="#stahnout">Stáhnout appku</a>
@@ -430,7 +471,7 @@
   </div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Pro učitele a jeho pokladnu</span>
+      <span class="eyebrow">Pro učitele a třídní pokladní</span>
       <h1>Peníze na výlet<br>pod <span class="accent">kontrolou</span>,<br>ne v sešitě.</h1>
       <p class="hero-sub">
         Třídní pokladna je mobilní aplikace pro evidenci žáků, výletů a plateb.
@@ -465,7 +506,7 @@
     <div class="section-head">
       <span class="kicker" style="color:var(--mint)">Proč vznikla</span>
       <h2>Sešit, tabulka v telefonu, papírky<br>od rodičů. Znáte to.</h2>
-      <p>Třídní pokladnu zná každý učitel — a řešení bývá improvizované. Třídní
+      <p>Třídní pokladní zná každý učitel — a řešení bývá improvizované. Třídní
       pokladna dělá jednu věc pořádně: drží přehled o penězích na výlety a akce.</p>
     </div>
     <div class="problem-grid">
@@ -568,6 +609,83 @@
         <div class="step-num">3</div>
         <h3>Sledujte platby</h3>
         <p>Zapisujte platby a výdaje průběžně. Kdykoliv máte jasno, kdo dluží a kolik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="videos" id="videonavody">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">Videonávody</span>
+      <h2>Radši se podívat, než číst</h2>
+      <p>Krátká videa vás krok za krokem provedou nastavením třídy, výletu
+      i sledováním plateb.</p>
+    </div>
+
+    <!--
+      NAVOD PRO PAVLA - jak sem pridat skutecne video:
+      1. Nahraj video soubor (napr. mp4) do slozky videos/ vedle index.html,
+         napr. videos/01-zalozeni-tridy.mp4
+      2. U prislusne karty smaz cely blok s tridou video-placeholder.
+      3. Zpristupni tag video, ktery je pod nim schovany jako komentar.
+      4. Uprav cestu u zdroje videa na skutecny nazev tveho souboru.
+      Klidne zkopiruj a uprav cely blok video-card pro dalsi videa.
+    -->
+
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-frame">
+          <div class="video-placeholder">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span>Video se připravuje</span>
+          </div>
+          <!-- <video controls poster="assets/thumbnail-1.jpg">
+            <source src="videos/01-zalozeni-tridy.mp4" type="video/mp4">
+          </video> -->
+        </div>
+        <div class="video-info">
+          <h3>Založení třídy a žáků</h3>
+          <p>Jak vytvořit skupinu, přidat žáky a mít je hned přehledně seřazené.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <div class="video-placeholder">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span>Video se připravuje</span>
+          </div>
+          <!-- <video controls poster="assets/thumbnail-2.jpg">
+            <source src="videos/02-vylet-a-zaloha.mp4" type="video/mp4">
+          </video> -->
+        </div>
+        <div class="video-info">
+          <h3>Založení výletu a zálohy</h3>
+          <p>Nastavení nového výletu, zálohy na žáka a první zápis platby.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <div class="video-placeholder">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span>Video se připravuje</span>
+          </div>
+          <!-- <video controls poster="assets/thumbnail-3.jpg">
+            <source src="videos/03-spolecne-vydaje-export.mp4" type="video/mp4">
+          </video> -->
+        </div>
+        <div class="video-info">
+          <h3>Společné výdaje a export</h3>
+          <p>Rozpočítání výdaje mezi žáky a export přehledu z appky ven.</p>
+        </div>
       </div>
     </div>
   </div>
