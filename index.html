@@ -215,6 +215,20 @@
     .hero-phones{height:360px; transform:scale(0.72);}
   }
 
+    .btn-secondary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:transparent; color:var(--navy);
+    padding:12px 22px; border-radius:100px;
+    border:2px solid var(--navy);
+    text-decoration:none; font-weight:600; font-size:15.5px;
+    transition:transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn-secondary:hover{background:var(--navy); color:white; transform:translateY(-2px);}
+  .btn-secondary svg{width:20px; height:20px; flex-shrink:0;}
+  .cta-buttons{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .cta .btn-secondary{color:white; border-color:rgba(255,255,255,0.85);}
+  .cta .btn-secondary:hover{background:white; color:var(--navy);}
+
   /* ---------- STRIP: receipt divider ---------- */
   .receipt-divider{
     height:26px;
@@ -483,6 +497,10 @@
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3l10.5 10.5L3 21V3z" fill="currentColor"/><path d="M13.5 13.5L17 10l3.5 2c.7.4.7 1.3 0 1.7L17 15.7l-3.5-2.2z" fill="currentColor" opacity="0.6"/><path d="M3 3l14 8.5L3 21V3z" fill="currentColor" opacity="0.9"/></svg>
           Stáhnout na Google Play
         </a>
+         <a class="btn-secondary" href="#stahnout">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5l8-1.1v7.1H3V5.5zm9 -1.2L21 3v8.5h-9V4.3zM3 12.5h8v7.1l-8-1.1v-6zm9 0h9V21l-9-1.3v-7.2z"/></svg>
+          Stáhnout pro Windows
+        </a>
         <a class="btn-ghost" href="#funkce">Prohlédnout funkce ↓</a>
       </div>
       <div class="trust-row">
@@ -734,11 +752,17 @@
 <section class="cta" id="stahnout">
   <div class="wrap cta-inner">
     <h2>Příští výlet si zorganizujte<br>bez sešitu.</h2>
-    <p>Třídní pokladna je zdarma ke stažení na Google Play. Žádná registrace, žádné čekání.</p>
-    <a class="btn-primary" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3l10.5 10.5L3 21V3z" fill="currentColor"/><path d="M13.5 13.5L17 10l3.5 2c.7.4.7 1.3 0 1.7L17 15.7l-3.5-2.2z" fill="currentColor" opacity="0.55"/><path d="M3 3l14 8.5L3 21V3z" fill="currentColor" opacity="0.85"/></svg>
-      Stáhnout na Google Play
-    </a>
+    <p>Třídní pokladna je zdarma ke stažení pro Android i pro Windows. Žádná registrace, žádné čekání.</p>
+    <div class="cta-buttons">
+      <a class="btn-primary" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3l10.5 10.5L3 21V3z" fill="currentColor"/><path d="M13.5 13.5L17 10l3.5 2c.7.4.7 1.3 0 1.7L17 15.7l-3.5-2.2z" fill="currentColor" opacity="0.55"/><path d="M3 3l14 8.5L3 21V3z" fill="currentColor" opacity="0.85"/></svg>
+        Stáhnout na Google Play
+      </a>
+      <a class="btn-secondary" href="downloads/TridniPokladna-Setup.exe" download>
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5l8-1.1v7.1H3V5.5zm9 -1.2L21 3v8.5h-9V4.3zM3 12.5h8v7.1l-8-1.1v-6zm9 0h9V21l-9-1.3v-7.2z"/></svg>
+        Stáhnout pro Windows
+      </a>
+    </div>
   </div>
 </section>
 
